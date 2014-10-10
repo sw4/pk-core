@@ -3,52 +3,48 @@ var pk = pk || {};
     pk.preventBubble = function (e) {
         if (e.preventDefault) e.preventDefault();
         if (e.stopPropagation) e.stopPropagation();
-        e.cancelBubble = true; // IE events
-        e.returnValue = false; // IE events
+        e.cancelBubble = true;
+        e.returnValue = false;
         return false;
     };
     pk.center = function (el) {
         el.style.top = el.parentNode.clientHeight / 2 - (el.offsetHeight / 2) + 'px';
         el.style.left = el.parentNode.clientWidth / 2 - (el.offsetWidth / 2) + 'px';
     };
-    pk.getStyle = function (obj, style) {
-        var css = window.getComputedStyle(obj);
-        return css.getPropertyValue(style);
+    pk.getStyle = function (el, p) {
+        return window.getComputedStyle(el).getPropertyValue(p);
     };
-    pk.addClass = function (thisEl, cssClass) {
-        var cssClasses = thisEl.getAttribute('class');
-        cssClasses = cssClasses || '';
-        if (cssClasses && cssClasses.indexOf(cssClass) > -1) return;
-        thisEl.setAttribute('class', (cssClasses ? cssClasses + ' ' : '') + cssClass);
-        return thisEl;
+    pk.addClass = function (el, c) {
+        var ca = el.getAttribute('class') || '';
+        if (ca && ca.indexOf(c) > -1) return;
+        el.setAttribute('class', (ca ? ca + ' ' : '') + c);
+        return el;
     };
-    pk.removeClass = function (thisEl, cssClass) {
-        var cssClasses = thisEl.getAttribute('class');
-        if (!cssClasses) return;
-        thisEl.setAttribute('class', cssClasses.replace(cssClass, ''));
-        return thisEl;
+    pk.removeClass = function (el, c) {
+        var ca = el.getAttribute('class');
+        if (!ca) return;
+        el.setAttribute('class', ca.replace(c, ''));
+        return el;
     };
-    pk.bindEvent = function (ev, thisEl, fn) {
-        if (thisEl.addEventListener) {
-            thisEl.addEventListener(ev, fn, false);
+    pk.bindEvent = function (e, el, fn) {
+        if (el.addEventListener) {
+            el.addEventListener(e, fn, false);
         } else {
-            thisEl.attachEvent("on" + ev, fn);
+            el.attachEvent("on" + e, fn);
         }
     };
-    
-    pk.offset = function (elem) {
-            var top= elem.getBoundingClientRect().top,
-             left= elem.getBoundingClientRect().left,
-             height= elem.offsetHeight,
-             width= elem.offsetWidth;
+    pk.offset = function (el) {
+            var t= el.getBoundingClientRect().top,
+                l= el.getBoundingClientRect().left,
+                h= el.offsetHeight,
+                w= el.offsetWidth;
             return {
-                top: top,
-                left: left,
-                right:left+width,
-                bottom:top+height,
-                height: height,
-                width: width
+                top: t,
+                left: l,
+                right:l+w,
+                bottom:t+h,
+                height: h,
+                width: w
             };
         };
-
 })(pk);

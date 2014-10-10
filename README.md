@@ -16,6 +16,6 @@ pk.center(el) // vertical and horzontal centering
 pk.getStyle(el, styleName) // get computed style value
 pk.addClass(el, className) // add CSS class
 pk.removeClass(el, className) // remove CSS class
-pk.bindEvent(ev, el, fn) // browser agnostic event binding
+pk.bindEvent(e, el, fn) // browser agnostic event binding
 pk.offset(el) // get element top, right, bottom, left, height and width values
 ```

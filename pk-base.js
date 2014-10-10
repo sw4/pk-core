@@ -34,17 +34,17 @@ var pk = pk || {};
         }
     };
     pk.offset = function (el) {
-            var t= el.getBoundingClientRect().top,
-                l= el.getBoundingClientRect().left,
-                h= el.offsetHeight,
-                w= el.offsetWidth;
-            return {
-                top: t,
-                left: l,
-                right:l+w,
-                bottom:t+h,
-                height: h,
-                width: w
-            };
+        var t = el.getBoundingClientRect().top,
+            l = el.getBoundingClientRect().left,
+            h = el.offsetHeight,
+            w = el.offsetWidth;
+        return {
+            top: t,
+            left: l,
+            right: l + w,
+            bottom: t + h,
+            height: h,
+            width: w
         };
+    };
 })(pk);

@@ -53,7 +53,7 @@ var pk = pk || {};
     };
 
     pk.wrap = function(el, str){
-        var helperEl = pk.createEl(str);    
+        var helperEl = pk.getEl(str);    
         el.parentNode.insertBefore(helperEl, el);
         helperEl.appendChild(el);
         return helperEl;

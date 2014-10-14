@@ -70,7 +70,7 @@ var pk = pk || {};
         while (el = el[prop]) { ++i; }
         return i-1;        
     }; 
-    pk.replaceEl(el,str) {
+    pk.replaceEl = function(el,str) {
         var newEl = pk.createEl(str); 
         foreach (el.attributes as a) {
             newEl.setAttribute(a.nodeName, a.nodeValue);

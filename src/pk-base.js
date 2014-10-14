@@ -79,6 +79,6 @@ var pk = pk || {};
         newEl.appendChild(el.firstChild);
         }
         return el.parentNode.replaceChild(newEl);
-    }    
+    };
     
 })(pk);

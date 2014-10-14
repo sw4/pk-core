@@ -72,8 +72,9 @@ var pk = pk || {};
     }; 
     pk.replaceEl = function(el,str) {
         var newEl = pk.createEl(str); 
-        foreach (el.attributes as a) {
-            newEl.setAttribute(a.nodeName, a.nodeValue);
+        
+        for(var i = 0; i < el.attributes.length; i++) {
+            newEl.setAttribute(el.attributes[i].nodeName, el.attributes[i].nodeValue);
         }
         while (el.firstChild) {
         newEl.appendChild(el.firstChild);

@@ -47,4 +47,25 @@ var pk = pk || {};
             width: w
         };
     };
+    
+    pk.wrap = function(opt){
+        var el=opt.element;
+        var tgt=opt.target;
+        var helperEl = pk.createEl(el);    
+        tgt.parentNode.insertBefore(helperEl, tgt);
+        helperEl.appendChild(tgt);
+        return helperEl;
+    }
+    pk.createEl=function(str){
+        var el = document.createElement('div');        
+        el.innerHTML=str;        
+        return el.children[0];
+    }
+    pk.index=function(el){
+        if(!el){return null;}
+        var prop = document.body.previousElementSibling ? 'previousElementSibling' : 'previousSibling';
+        var i = 1;
+        while (el = el[prop]) { ++i }
+        return i-1;        
+    }    
 })(pk);

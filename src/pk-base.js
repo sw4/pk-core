@@ -47,19 +47,23 @@ var pk = pk || {};
             width: w
         };
     };
-    
+
+    pk.getRand = function (min, max) {
+      return Math.floor(Math.random() * (max - min)) + min;
+    };
+
     pk.wrap = function(el, str){
         var helperEl = pk.createEl(str);    
         el.parentNode.insertBefore(helperEl, el);
         helperEl.appendChild(el);
         return helperEl;
     };
-    pk.createEl=function(str){
+    pk.getEl=function(str){
         var el = document.createElement('div');        
         el.innerHTML=str;        
         return el.children[0];
     };
-    pk.index=function(el){
+    pk.getIndex=function(el){
         if(!el){return null;}
         var prop = document.body.previousElementSibling ? 'previousElementSibling' : 'previousSibling';
         var i = 1;

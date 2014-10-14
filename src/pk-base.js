@@ -63,7 +63,7 @@ var pk = pk || {};
         if(!el){return null;}
         var prop = document.body.previousElementSibling ? 'previousElementSibling' : 'previousSibling';
         var i = 1;
-        while (el = el[prop]) { ++i }
+        while (el = el[prop]) { ++i; }
         return i-1;        
     }; 
 })(pk);

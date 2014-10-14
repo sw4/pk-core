@@ -71,15 +71,14 @@ var pk = pk || {};
         return i-1;        
     }; 
     pk.replaceEl = function(el,str) {
-        var newEl = pk.createEl(str); 
-        
+        var newEl = pk.getEl(str);         
         for(var i = 0; i < el.attributes.length; i++) {
             newEl.setAttribute(el.attributes[i].nodeName, el.attributes[i].nodeValue);
         }
         while (el.firstChild) {
         newEl.appendChild(el.firstChild);
         }
-        return el.parentNode.replaceChild(newEl);
+        return el.parentNode.replaceChild(newEl, el);
     };
     
 })(pk);

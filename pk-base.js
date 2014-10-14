@@ -48,9 +48,7 @@ var pk = pk || {};
         };
     };
     
-    pk.wrap = function(opt){
-        var el=opt.element;
-        var tgt=opt.target;
+    pk.wrap = function(tgt, el){
         var helperEl = pk.createEl(el);    
         tgt.parentNode.insertBefore(helperEl, tgt);
         helperEl.appendChild(tgt);

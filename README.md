@@ -19,6 +19,6 @@ pk.removeClass(el, className) // remove CSS class
 pk.bindEvent(e, el, fn) // browser agnostic event binding
 pk.offset(el) // get element top, right, bottom, left, height and width values
 pk.index(el) // get DOM index of 'el' within the parent node
-pk.wrap(tgt,el) // wrap the element 'tgt' with the element 'el'
+pk.wrap(el, str) // wrap the element 'el' with the element created from 'str'
 pk.createEl(str) // create a DOM element from a string
 ```

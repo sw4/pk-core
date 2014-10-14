@@ -1,8 +1,8 @@
 var pk = pk || {};
 (function (pk) {
     pk.preventBubble = function (e) {
-        if (e.preventDefault) e.preventDefault();
-        if (e.stopPropagation) e.stopPropagation();
+        if (e.preventDefault) {e.preventDefault();}
+        if (e.stopPropagation) {e.stopPropagation();}
         e.cancelBubble = true;
         e.returnValue = false;
         return false;
@@ -16,13 +16,13 @@ var pk = pk || {};
     };
     pk.addClass = function (el, c) {
         var ca = el.getAttribute('class') || '';
-        if (ca && ca.indexOf(c) > -1) return;
+        if (ca && ca.indexOf(c) > -1){ return;}
         el.setAttribute('class', (ca ? ca + ' ' : '') + c);
         return el;
     };
     pk.removeClass = function (el, c) {
         var ca = el.getAttribute('class');
-        if (!ca) return;
+        if (!ca){return;}
         el.setAttribute('class', ca.replace(c, ''));
         return el;
     };
@@ -53,17 +53,17 @@ var pk = pk || {};
         el.parentNode.insertBefore(helperEl, el);
         helperEl.appendChild(el);
         return helperEl;
-    }
+    };
     pk.createEl=function(str){
         var el = document.createElement('div');        
         el.innerHTML=str;        
         return el.children[0];
-    }
+    };
     pk.index=function(el){
         if(!el){return null;}
         var prop = document.body.previousElementSibling ? 'previousElementSibling' : 'previousSibling';
         var i = 1;
         while (el = el[prop]) { ++i }
         return i-1;        
-    }    
+    }; 
 })(pk);

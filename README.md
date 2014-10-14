@@ -24,4 +24,5 @@ pk.getIndex(el) // get DOM index of 'el' within the parent node
 pk.wrap(el, str) // wrap the element 'el' with the element created from 'str'
 pk.getEl(str) // create a DOM element from a string
 pk.getRand(min, max) // get a random integer between min and max
+pk.replaceEl(el, str) // replace the element el with the element created from str, copying all attributes
 ```

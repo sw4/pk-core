@@ -48,10 +48,10 @@ var pk = pk || {};
         };
     };
     
-    pk.wrap = function(tgt, el){
-        var helperEl = pk.createEl(el);    
-        tgt.parentNode.insertBefore(helperEl, tgt);
-        helperEl.appendChild(tgt);
+    pk.wrap = function(el, str){
+        var helperEl = pk.createEl(str);    
+        el.parentNode.insertBefore(helperEl, el);
+        helperEl.appendChild(el);
         return helperEl;
     }
     pk.createEl=function(str){

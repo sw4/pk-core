@@ -16,11 +16,11 @@ var pk = pk || {};
             return;
         }
         pk.toggleClass(el, c, pk.hasClass(el,c));
-    }
+    };
     pk.hasClass=function(el, c){
         var ca = el.getAttribute('class') || '';
         return (ca && ca.indexOf(c) > -1) ? true : false;
-    }
+    };
     pk.center = function (el) {
         el.style.top = el.parentNode.clientHeight / 2 - (el.offsetHeight / 2) + 'px';
         el.style.left = el.parentNode.clientWidth / 2 - (el.offsetWidth / 2) + 'px';

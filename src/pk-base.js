@@ -33,9 +33,9 @@ var pk = pk || {};
             el.attachEvent("on" + e, fn);
         }
     };
-    pk.offset = function (el) {
-        var t = el.getBoundingClientRect().top,
-            l = el.getBoundingClientRect().left,
+    pk.layout = function (el, offset) {
+        var t = offset ? el.offsetTop : el.getBoundingClientRect().top,
+            l = offset ? el.offsetLeft : el.getBoundingClientRect().left,
             h = el.offsetHeight,
             w = el.offsetWidth;
         return {

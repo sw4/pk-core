@@ -88,7 +88,7 @@ var pk = pk || {};
         el.parentNode.replaceChild(newEl, el);
         return newEl;
     };
-    pk.attribute(el, attr, val){
+    pk.attribute = function (el, attr, val){
         if(val===undefined){
             return (attr==='disabled' || attr==='checked') ? (el.hasAttribute(attr) ? true : false) : el.getAttribute(attr);
         }

@@ -7,6 +7,20 @@ var pk = pk || {};
         e.returnValue = false;
         return false;
     };
+    pk.toggleClass = function(el, c, t){
+        if(t === true){
+            pk.addClass(el,c);
+            return;
+        }else if(t===false){
+            pk.removeClass(el,c);
+            return;
+        }
+        pk.toggleClass(el, c, pk.hasClass(el,c));
+    }
+    pk.hasClass=function(el, c){
+        var ca = el.getAttribute('class') || '';
+        return (ca && ca.indexOf(c) > -1) ? true : false;
+    }
     pk.center = function (el) {
         el.style.top = el.parentNode.clientHeight / 2 - (el.offsetHeight / 2) + 'px';
         el.style.left = el.parentNode.clientWidth / 2 - (el.offsetWidth / 2) + 'px';
@@ -15,8 +29,8 @@ var pk = pk || {};
         return window.getComputedStyle(el).getPropertyValue(p);
     };
     pk.addClass = function (el, c) {
+        if (pk.hasClass(el,c)){ return;}
         var ca = el.getAttribute('class') || '';
-        if (ca && ca.indexOf(c) > -1){ return;}
         el.setAttribute('class', (ca ? ca + ' ' : '') + c);
         return el;
     };

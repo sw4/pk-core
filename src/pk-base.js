@@ -88,5 +88,14 @@ var pk = pk || {};
         el.parentNode.replaceChild(newEl, el);
         return newEl;
     };
-    
+    pk.attribute(el, attr, val){
+        if(val===undefined){
+            return (attr==='disabled' || attr==='checked') ? (el.hasAttribute(attr) ? true : false) : el.getAttribute(attr);
+        }
+        if(val===false && (attr==='disabled' || attr==='checked')){
+            inputEl.removeAttribute(attr); 
+        }else{
+            el.setAttribute(attr,val);
+        }               
+    };
 })(pk);

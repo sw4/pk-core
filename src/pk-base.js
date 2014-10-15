@@ -53,7 +53,7 @@ var pk = pk || {};
     pk.bindListeners=function(l, el){
         for(var e in l){
             pk.bindEvent(e, el, l[e]);                
-        };
+        }
     };
     pk.getRand = function (min, max) {
       return Math.floor(Math.random() * (max - min)) + min;

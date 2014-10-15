@@ -27,6 +27,9 @@ var pk = pk || {};
         return el;
     };
     pk.bindEvent = function (e, el, fn) {
+        if(e==="mousewheel"){
+            e = (/Firefox/i.test(navigator.userAgent)) ? "DOMMouseScroll" : "mousewheel"; //FF doesn't recognize mousewheel as of FF3.x  
+        }
         if (el.addEventListener) {
             el.addEventListener(e, fn, false);
         } else {

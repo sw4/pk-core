@@ -50,7 +50,7 @@ var pk = pk || {};
             width: w
         };
     };
-    pk.bindListeners(l, el){
+    pk.bindListeners=function(l, el){
         for(var e in l){
             pk.bindEvent(e, el, l[e]);                
         };

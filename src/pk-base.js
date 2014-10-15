@@ -52,13 +52,13 @@ var pk = pk || {};
       return Math.floor(Math.random() * (max - min)) + min;
     };
 
-    pk.wrap = function(el, str){
-        var helperEl = pk.getEl(str);    
+    pk.wrapEl = function(el, str){
+        var helperEl = pk.createEl(str);    
         el.parentNode.insertBefore(helperEl, el);
         helperEl.appendChild(el);
         return helperEl;
     };
-    pk.getEl=function(str){
+    pk.createEl=function(str){
         var el = document.createElement('div');        
         el.innerHTML=str;        
         return el.children[0];
@@ -71,7 +71,7 @@ var pk = pk || {};
         return i-1;        
     }; 
     pk.replaceEl = function(el,str) {
-        var newEl = pk.getEl(str);         
+        var newEl = pk.createEl(str);         
         for(var i = 0; i < el.attributes.length; i++) {
             newEl.setAttribute(el.attributes[i].nodeName, el.attributes[i].nodeValue);
         }

@@ -76,9 +76,10 @@ var pk = pk || {};
             newEl.setAttribute(el.attributes[i].nodeName, el.attributes[i].nodeValue);
         }
         while (el.firstChild) {
-        newEl.appendChild(el.firstChild);
+            newEl.appendChild(el.firstChild);
         }
-        return el.parentNode.replaceChild(newEl, el);
+        el.parentNode.replaceChild(newEl, el);
+        return newEl;
     };
     
 })(pk);

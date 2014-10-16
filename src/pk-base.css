@@ -1,5 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700);
-[class*=pk-]{
+[class*=pk-]:not(.pk-noselect){
     font-family:'PT Sans Narrow';
     font-size:14px;
 }

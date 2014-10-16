@@ -104,12 +104,11 @@ var pk = pk || {};
     };
     pk.attribute = function (el, attr, val){
         
-        attr = el.hasAttribute(attr) ? attr : el.hasAttribute('data-'+attr) ? 'data-'+attr : attr;
-        
+        attr = el.hasAttribute(attr) ? attr : el.hasAttribute('data-'+attr) ? 'data-'+attr : attr;        
         if(val===undefined){
-            return (attr==='disabled' || attr==='checked') ? (el.hasAttribute(attr) ? true : false) : el.getAttribute(attr);
+            return (attr==='selected' || attr==='disabled' || attr==='checked') ? (el.hasAttribute(attr) ? true : false) : el.getAttribute(attr);
         }
-        if(val===false && (attr==='disabled' || attr==='checked')){
+        if(val===false && (attr==='selected' || attr==='disabled' || attr==='checked')){
             el.removeAttribute(attr); 
         }else{
             el.setAttribute(attr,val);

@@ -2,6 +2,17 @@
 [class*=pk-]:not(.pk-noselect){
     font-family:'PT Sans Narrow';
 }
+.pk-overlay{
+    position:fixed;
+    height:100%;
+    width:100%;
+    left:0;
+    top:0;
+    display:block;
+}
+.pk-hide{
+    display:none;
+}
 .pk-noselect {
     cursor:default;
     -webkit-touch-callout: none;

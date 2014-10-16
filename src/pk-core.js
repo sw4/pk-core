@@ -103,6 +103,9 @@ var pk = pk || {};
         return newEl;
     };
     pk.attribute = function (el, attr, val){
+        
+        attr = el.hasAttribute(attr) ? attr : el.hasAttribute('data-'+attr) ? 'data-'+attr : attr;
+        
         if(val===undefined){
             return (attr==='disabled' || attr==='checked') ? (el.hasAttribute(attr) ? true : false) : el.getAttribute(attr);
         }

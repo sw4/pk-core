@@ -15,7 +15,7 @@ var pk = pk || {};
             pk.removeClass(el,c);
             return;
         }
-        pk.toggleClass(el, c, pk.hasClass(el,c));
+        pk.toggleClass(el, c, !pk.hasClass(el,c));
     };
     pk.hasClass=function(el, c){
         var ca = el.getAttribute('class') || '';

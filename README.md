@@ -29,4 +29,6 @@ pk.createEl(str) // create a DOM element from a string
 pk.getRand(min, max) // get a random integer between min and max
 pk.attribute(el, attr, val) // gets or sets an attribute value intelligently
 pk.replaceEl(el, str) // replace the element el with the element created from str, copying all attributes
+pk.toArr(v) // force v to an array, split on comma if string / found
+pk.collide(a1, a2, s) // collide array a2 with array a2, s = 0 (replace a1 with a1), 1 (add a2 to a1), 2 (remove a2 from a1), 3 (toggle add/remove a2 items in a1)
 ```

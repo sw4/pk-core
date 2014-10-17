@@ -174,7 +174,7 @@ var pk = pk || {};
             if(!f && (s ===1 || s === 3)){
                 a1.push(a2[i]);
             }else if(f && (s ===2 || s === 3)){
-                a1.splice(i, 1);
+                a1.splice(parseInt(a1.indexOf(a2[i]), 0), 1);
             }                
         }
         return a1;

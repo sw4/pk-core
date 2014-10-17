@@ -157,6 +157,28 @@ var pk = pk || {};
         }
         return a;
     };    
+    pk.collide = function(a1, a2, s){
+        s = s || 0;
+        a1=pk.toArr(a1);
+        a2=pk.toArr(a2);
+        /* 
+            s = switch
+            0 (default) = replace a1 with a2
+            1 = add a2 to a1
+            2 = remove a2 from a1
+            3 = toggle a2 in a1 and add/remove items if not/found                
+        */
+        if(s=0){return a2};            
+        for(var i in a2){
+            var f = a1.indexOf(a2[i]) !== -1 ? true : false;                
+            if(!f && (s ===1 || s === 3)){
+                a1.push(a2[i]);
+            }else if(f && (s ===2 || s === 3)){
+                a1 = a1.splice(i, 1);
+            }                
+        }
+        return a1;
+    }; 
     pk.attribute = function (el, attr, val){
         
         attr = el.hasAttribute(attr) ? attr : el.hasAttribute('data-'+attr) ? 'data-'+attr : attr;        

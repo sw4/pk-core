@@ -168,7 +168,7 @@ var pk = pk || {};
             2 = remove a2 from a1
             3 = toggle a2 in a1 and add/remove items if not/found                
         */
-        if(s=0){return a2};            
+        if(s=0){return a2;}
         for(var i in a2){
             var f = a1.indexOf(a2[i]) !== -1 ? true : false;                
             if(!f && (s ===1 || s === 3)){
